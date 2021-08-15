@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "$(transmission-remote -l | grep "Stopped" | awk '{print $2}')"

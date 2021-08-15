@@ -1,0 +1,3 @@
+#!/bin/bash
+
+df -h | awk '{if ($6 == "/") print $4}'

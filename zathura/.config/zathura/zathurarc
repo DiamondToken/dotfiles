@@ -1,0 +1,9 @@
+#set statusbar-v-padding 0
+#set statusbar-h-padding 0
+#set page-padding 1
+set selection-clipboard clipboard
+map R rotate
+map i recolor
+map p print
+
+set first-page-column 1:1
