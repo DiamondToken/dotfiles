@@ -43,7 +43,7 @@ alias ls='ls --color=auto'
 alias du='du -h'
 alias grep='grep --color=auto'
 alias rsh='redshift'
-alias nnn='nnn -c'
+alias nnn='nnn -cC'
 #set -o vi
 #bind -P
 alias sl="ls"
