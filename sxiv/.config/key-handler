@@ -1,0 +1,11 @@
+#!/bin/sh
+
+while read file
+do
+	case "$1" in 
+		"C-c")
+			xclip -selection clipboard -t image/png $file ;;
+		"C-b")
+			feh --no-fehbg --bg-scale "$file" ;;
+	esac
+done

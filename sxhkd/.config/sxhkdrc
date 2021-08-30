@@ -1,0 +1,23 @@
+#mod1 = alr_r
+
+
+super + shift + {z, x}
+    {/home/diamond/scripts/prompt "Reboot?" "reboot", /home/diamond/scripts/prompt "Poweroff?" "poweroff"}
+
+super + o; {b, e, E, u, w, m}
+    {chromium, st -e nnn -c, pcmanfm, zathura, /home/diamond/scripts/dict.sh, /home/diamond/scripts/unmount.sh}
+
+super + z
+    slock
+
+super + shift + m
+    /home/diamond/scripts/mount.sh
+
+super + {bracketleft, bracketright}
+    pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+2 dwmblocks
+
+Print
+    maim ~/Pictures/$(date +%s).png
+
+mod1 + Print
+    maim --select | xclip -selection clipboard -target image/png
