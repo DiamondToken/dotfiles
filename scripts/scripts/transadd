@@ -2,4 +2,7 @@
 
 pgrep -x transmission-da > /dev/null || transmission-daemon
 
-transmission-remote --add "$@" && notify-send "Torrent added." 
+dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
+folder=$(echo "$dirs" | dmenu -i -p "Choose dir")
+
+transmission-remote --add "$@" -w $folder && notify-send "Torrent added."

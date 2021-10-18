@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-Xephyr -br -ac -reset -screen 1920x1080 :1 &
+Xephyr -br -ac -noreset -screen 720*480 :1 &
 sleep 1s
 export DISPLAY=:1
 
-DISPLAY=:1 /home/diamond/repos/dwm/dwm &
-DISPLAY=:1 st &
+DISPLAY=:1 /home/diamond/myrepos/xlib_prog/core &
+#DISPLAY=:1 st &

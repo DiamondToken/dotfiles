@@ -7,5 +7,7 @@ do
 			xclip -selection clipboard -t image/png $file ;;
 		"C-b")
 			feh --no-fehbg --bg-scale "$file" ;;
+        "C-d")
+            mv $file ~/trash/ ;;
 	esac
 done

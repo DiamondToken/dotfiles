@@ -1,6 +1,8 @@
 (setq tls-checktrust t)
 (setq gnutls-verify-error t)
 
+(setq org-clock-sound "~/Downloads/bell.wav")
+;;(setq show-paren-style 'expression)
 (setq ring-bell-function 'ignore)
 (global-visual-line-mode 1)
 (column-number-mode 1)
@@ -10,16 +12,15 @@
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
 (setq message-log-max t)
+(setq confirm-kill-emacs 'y-or-n-p)
 ;;(load-theme 'kaolin-valley-dark t)
 ;;(load-theme 'solarized-dark-high-contrast t)
 ;;(set-frame-font "mononoki-20" nil t)
-(add-to-list 'default-frame-alist '(font . "Iosevka Extended-20" ))
+(add-to-list 'default-frame-alist '(font . "Iosevka Extended-20"))
 ;; (set-face-attribute 'default nil :font "JuliaMono-20" :height 200)
 ;; (set-face-attribute 'default nil :font "Fantasque Sans Mono-24" :height 200)
 ;;(set-frame-font "Hermit-20")
-;;(set-frame-font "Iosevka Term Extended-20")
-
-(message "privet")
+(set-frame-font "Iosevka Extended-20")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -77,6 +78,20 @@
 
 (global-set-key (kbd "C-!") 'eshell-here)
 
+(use-package diminish :ensure t
+  :config
+  (progn (diminish 'company-mode)
+         (diminish 'company-posframe-mode)
+         (diminish 'wrap-region-mode)
+         (diminish 'yas-minor-mode)
+         (diminish 'visual-line-mode)))
+(use-package rust-mode :ensure t)
+(use-package pdf-tools :ensure t
+  :config
+  (pdf-tools-install))
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
 (use-package git-timemachine :ensure t :defer t)
 (use-package gruvbox-theme :ensure t :defer t
   :config
@@ -91,7 +106,8 @@
                                    (setq tab-width 4)))))
 (use-package tramp :ensure t :defer t
   :config
-  (setq tramp-default-method "ssh"))
+  (setq tramp-default-method "ssh")
+  (setq tramp-auto-save-directory "/tmp"))
 (use-package org :ensure t :defer t
   :config
   (org-babel-do-load-languages
@@ -101,7 +117,7 @@
         (C . t)))
    (setq org-capture-templates
            '(
-             ("b" "Bookmark" entry (file+headline "~/Documents/org-mode/notes.org" "Bookmarks")
+             ("b" "Bookmark" entry (file+headline "~/Documents/notes.org.gpg" "Bookmarks")
               "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1))))
 (use-package org-bullets :ensure t :defer t
   :after org
@@ -171,6 +187,14 @@
    ("C-c C-<" . mc/mark-all-like-this)
    ("C-\"" . mc/skip-to-next-like-this)
    ("C-:" . mc/skip-to-next-like-this)))
+
+(defun rc/delete-file ()
+  (interactive)
+  (when (file-exists-p buffer-file-name)
+    (if (y-or-n-p (concat "Delete " buffer-file-name "?"))
+        (progn
+          (delete-file buffer-file-name)
+          (message "Deleted file %s" buffer-file-name)))))
 
 (defun rc/eval-and-replace ()
   "Replace the preceding sexp with its value."
