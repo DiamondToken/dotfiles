@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 pgrep -x transmission-da > /dev/null || transmission-daemon
 
 dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
+folder=$(echo "$dirs" | dmenu -i -p "Choose dir" -H "${XDG_CACHE_HOME:-$HOME/.cache/}/dmenu_run.hist" "$@")
 folder=$(echo "$dirs" | dmenu -i -p "Choose dir")
 
 transmission-remote --add "$@" -w $folder && notify-send "Torrent added."

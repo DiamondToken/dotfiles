@@ -12,7 +12,7 @@
     "blocklist-url": "http://www.example.com/blocklist",
     "cache-size-mb": 4,
     "dht-enabled": true,
-    "download-dir": "/home/diamond/hard/home/diamond/Downloads",
+    "download-dir": "/home/diamond/Downloads",
     "download-queue-enabled": true,
     "download-queue-size": 5,
     "encryption": 1,
@@ -53,7 +53,7 @@
     "rpc-whitelist-enabled": true,
     "scrape-paused-torrents-enabled": true,
     "script-torrent-done-enabled": true,
-    "script-torrent-done-filename": "/home/diamond/scripts/tordone",
+    "script-torrent-done-filename": "tordone",
     "seed-queue-enabled": false,
     "seed-queue-size": 10,
     "speed-limit-down": 100,
@@ -65,6 +65,6 @@
     "umask": 18,
     "upload-slots-per-torrent": 14,
     "utp-enabled": true,
-    "watch-dir": "Downloads/torrents/",
+    "watch-dir": "/home/diamond/Downloads/torrents/",
     "watch-dir-enabled": true
 }

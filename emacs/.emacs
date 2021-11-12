@@ -1,6 +1,7 @@
 (setq tls-checktrust t)
 (setq gnutls-verify-error t)
-
+(setq make-backup-files t)
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (setq org-clock-sound "~/Downloads/bell.wav")
 ;;(setq show-paren-style 'expression)
 (setq ring-bell-function 'ignore)
@@ -14,12 +15,7 @@
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
 ;;(load-theme 'kaolin-valley-dark t)
-;;(load-theme 'solarized-dark-high-contrast t)
-;;(set-frame-font "mononoki-20" nil t)
 (add-to-list 'default-frame-alist '(font . "Iosevka Extended-20"))
-;; (set-face-attribute 'default nil :font "JuliaMono-20" :height 200)
-;; (set-face-attribute 'default nil :font "Fantasque Sans Mono-24" :height 200)
-;;(set-frame-font "Hermit-20")
 (set-frame-font "Iosevka Extended-20")
 
 (require 'package)
@@ -36,19 +32,17 @@
 
 ;; (set-language-environment "UTF-8")  UTF8 as default
 ;; (set-default-coding-systems 'utf-8)
-;;(delete-selection-mode 1) ; typing overwrite selected text
+;; (delete-selection-mode 1) ; typing overwrite selected text
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
 (fset 'yes-or-no-p 'y-or-n-p)
-;;(global-hl-line-mode nil)
 (setq display-line-numbers-type 'relative)
 ;;(setq global-display-line-numbers 'relative)
 (global-display-line-numbers-mode)
 (setq x-underline-at-descent-line t)
 ;;(setq solarized-distinct-fringe-background t)
-;;(setq solarized-high-contrast-mode-line t)
-;;(load-theme 'doom-old-hope t)
+(setq solarized-high-contrast-mode-line t)
 
 (add-hook 'prog-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'before-save-hook 'rc/set-up-whitespace-handling)
@@ -56,16 +50,10 @@
 (global-set-key (kbd "C-c c") 'comment-dwim)
 (global-set-key (kbd "C-x a r") 'align-regexp)
 
-(setq c-default-style "java")
-
-(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
-
-;;(global-set-key (kbd "C-s") 'helm-swoop)
-;; (global-set-key (kbd "M-s") 'helm-find-files)
 (global-set-key (kbd "<f2>") 'recompile)
-;; (when (not (package-installed-p 'use-package))
-;;   (package-refresh-contents)
-;;   (package-install 'use-package))
+(when (not (package-installed-p 'use-package))
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 (defun eshell-here ()
   (interactive)
@@ -93,13 +81,13 @@
   :ensure t
   :bind ("C-c d" . docker))
 (use-package git-timemachine :ensure t :defer t)
-(use-package gruvbox-theme :ensure t :defer t
-  :config
-  (load-theme 'gruvbox-dark-medium t))
-;; (use-package solarized-theme
-;;   :ensure t
+;; (use-package gruvbox-theme :ensure t :defer t
 ;;   :config
-;;   (load-theme 'solarized-dark-high-contrast t))
+;;   (load-theme 'gruvbox-dark-medium t))
+(use-package solarized-theme
+  :ensure t
+  :config
+  (load-theme 'solarized-dark-high-contrast t))
 (use-package python :ensure t :defer t
   :hook
   (python-mode . (lambda () (progn (setq python-indent-offset 4)
@@ -160,7 +148,8 @@
   :bind ("C-M-i" . company-complete)
   :config
   (global-company-mode)
-  (setq company-idle-delay 0.0))
+  (setq company-idle-delay 0.0)
+  (setq company-ctags-extra-tags-files '("$HOME/TAGS" "/usr/include/TAGS")))
 (use-package company-posframe :ensure t
   :after company
   :config (company-posframe-mode 1))
@@ -217,14 +206,16 @@
 ;;  (whitespace-mode 1)
   (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
-(setq auto-save-default nil)
-(setq make-backup-files nil)
+;; (setq auto-save-default nil)
+;; (setq make-backup-files nil)
 
 (put 'iconify-or-deiconify-frame 'disabled t)
 (put 'suspend-emacs 'disabled t)
 (put 'suspend-tty 'disabled t)
 
-(server-start)
+(require 'server)
+(unless (server-running-p)
+   (server-start))
 
 (defun rc/duplicate-line ()
   (interactive)

@@ -1,8 +1,10 @@
 #mod1 = alr_r
 
-
 super + shift + {z, x}
-    {/home/diamond/scripts/prompt "Reboot?" "reboot", /home/diamond/scripts/prompt "Poweroff?" "poweroff"}
+    {prompt.sh "Reboot?" "reboot", prompt.sh "Poweroff?" "poweroff"}
+
+super + backslash
+      {clipmenu}
 
 super + o; {b, e, E, u, w, m}
     {chromium, st -e nnn -Cc, pcmanfm, zathura, /home/diamond/scripts/dict.sh, /home/diamond/scripts/unmount.sh}

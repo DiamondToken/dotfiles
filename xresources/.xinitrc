@@ -14,9 +14,11 @@ XMODIFIERS=@im=ibus
 
 fcitx5 &
 
+exec clipmenud &
 exec sxhkd &
 exec dunst &
 exec transmission-daemon &
+exec /home/diamond/.screenlayout/d.sh &
 exec /home/diamond/.fehbg &
 exec telegram-desktop &
 #exec picom &

@@ -16,7 +16,6 @@ if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
 fi
 
 
-#PROMPT="%B[%F{magenta}%n%F{yellow}@%F{cyan}%M %F{white}%~]%F{green}$ %f%b"
 export EDITOR="emacsclient -c"
 export PATH="${PATH}:/home/diamond/scripts"
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -49,4 +48,10 @@ alias tsm="transmission-remote"
 #bind -P
 alias sl="ls"
 alias pacman="sudo pacman"
+
+function pasters() {
+    local file=${1:-/dev/stdin}
+    curl --data-binary @${file} https://paste.rs | tr -d "\n" | xclip -selection clipboard
+}
+
 use_color=true

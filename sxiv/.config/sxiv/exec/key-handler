@@ -8,6 +8,6 @@ do
 		"C-b")
 			feh --no-fehbg --bg-scale "$file" ;;
         "C-d")
-            mv $file ~/trash/ ;;
+            rm $file ;;
 	esac
 done
