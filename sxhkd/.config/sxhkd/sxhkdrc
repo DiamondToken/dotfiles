@@ -1,7 +1,10 @@
 #mod1 = alr_r
 
-super + shift + {z, x}
-    {prompt.sh "Reboot?" "reboot", prompt.sh "Poweroff?" "poweroff"}
+super + shift + z
+    prompt.sh "Reboot?" "reboot"
+
+super + shift + x
+    prompt.sh "Poweroff?" "poweroff"
 
 super + backslash
       {clipmenu}

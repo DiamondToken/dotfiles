@@ -1,3 +1,4 @@
+#!/bin/sh
 #exec setxkbmap -model pc61 -layout us,ru -variant ,, -option grp:alt_space_toggle &
 
 #export XDG_SESSION_TYPE=x11
@@ -14,16 +15,16 @@ XMODIFIERS=@im=ibus
 
 fcitx5 &
 
-exec clipmenud &
-exec sxhkd &
-exec dunst &
-exec transmission-daemon &
-exec /home/diamond/.screenlayout/d.sh &
-exec /home/diamond/.fehbg &
-exec telegram-desktop &
-#exec picom &
+clipmenud &
+sxhkd &
+dunst &
+transmission-daemon &
+/home/diamond/.screenlayout/d.sh &
+/home/diamond/.fehbg &
+telegram-desktop &
+# picom &
 
-exec dwmblocks &
+dwmblocks &
 
 while true; do
 	dwm
