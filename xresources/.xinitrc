@@ -22,7 +22,7 @@ transmission-daemon &
 /home/diamond/.screenlayout/d.sh &
 /home/diamond/.fehbg &
 telegram-desktop &
-# picom &
+picom --xrender-sync-fence &
 
 dwmblocks &
 

@@ -1,9 +1,13 @@
 autoload -U colors && colors
 
 export LC_CTYPE=en_US.UTF-8
-export BROWSER="brave"
+export BROWSER="firefox"
 export EDITOR="emacsclient -c"
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
 
 export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=2000
@@ -36,11 +40,44 @@ zstyle ':completion:*' verbose true
 # promptinit
 PROMPT="%F{red}%~%F{cyan} λ%f "
 
+# alias ls="ls --color=always"
+# alias la="ls -lah"
+# alias rsh="redshift"
+# alias grep="grep --color=always"
+# alias ka="killall"
+# alias pc="sudo pacman -Syu"
+# alias nnn="nnn -C"
+# alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
+# alias tsm="transmission-remote"
+# # [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
+# export XDG_CACHE_HOME=$HOME/.cache/
+
+alias al='la -lah'
+alias la='ls -lah'
+alias ls='ls --color=auto'
+alias sl="ls"
+alias cp="cp -iv"
+alias dmenu="dmenu -H "${XDG_CACHE_HOME:-$HOME/.cache/}/dmenu_run.hist" "$@""
+alias du='du -h'
+alias emacs="emacsclient -c"
+alias grep='grep --color=auto'
+alias ka="killall"
+alias mkdir="mkdir -pv"
+alias mv="mv -iv"
+alias nnn='nnn -cC'
+alias pc="sudo pacman -Syu && notify-send 'pacman is done'"
+alias pacman="sudo pacman"
+alias rm="rm -v"
+alias rsh='redshift'
+alias systemctl="sudo systemctl"
+alias tsm="transmission-remote"
+#set -o vi
+#bind -P
+
+
 function pasters() {
     local file=${1:-/dev/stdin}
     curl --data-binary @${file} https://paste.rs | tr -d "\n" | xclip -selection clipboard
 }
-
-[ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

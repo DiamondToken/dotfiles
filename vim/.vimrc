@@ -28,10 +28,10 @@ call plug#begin()
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex'}
 Plug 'chrisbra/Colorizer'
 Plug 'tpope/vim-surround'
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-"colorscheme gruvbox
+colorscheme solarized
 set background=dark
 
 filetype on
