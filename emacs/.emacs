@@ -66,6 +66,8 @@
 
 (global-set-key (kbd "C-!") 'eshell-here)
 
+(setq doom-modeline-height 40)
+(doom-modeline-mode 1)
 ;; (use-package ccls
 ;;   :ensure t
 ;;   :config
@@ -130,6 +132,7 @@
       '((python . t)
         (R . t)
         (C . t)))
+  (setq org-src-fontify-natively 't)
    (setq org-capture-templates
            '(
              ("b" "Bookmark" entry (file+headline "~/Documents/notes.org.gpg" "Bookmarks")
@@ -230,9 +233,13 @@
 (global-set-key (kbd "C-z") 'repeat)
 
 ;; calendar
-(setq calendar-week-start-day 1)
-(setq calendar-latitude 59.938)
-(setq calendar-longitude 30.31)
+;; (setq calendar-week-start-day 1)
+;; (setq calendar-latitude 59.938)
+;; (setq calendar-longitude 30.31)
+
+(setq calendar-latitude 60.001168)
+(setq calendar-longitude 30.42313)
+
 
 (defun rc/set-up-whitespace-handling ()
   (interactive)
