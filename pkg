@@ -1,4 +1,12 @@
+dunst
+htop
+alacritty
+dash
+picom
+clipmenu
 ntfs-3g
+feh
+nnn
 zsh
 zsh-completions
 zsh-syntax-highlighting

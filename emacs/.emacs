@@ -15,9 +15,9 @@
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
 ;;(load-theme 'kaolin-valley-dark t)
-(add-to-list 'default-frame-alist '(font . "Iosevka Extended-20"))
-(set-frame-font "Iosevka Extended-20")
-(set-frame-font "Iosevka Nerd Font-20")
+(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-22"))
+(set-frame-font "Iosevka-20")
+;(set-frame-font "Iosevka Nerd Font-22")
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
@@ -94,6 +94,8 @@
          (diminish 'wrap-region-mode)
          (diminish 'yas-minor-mode)
          (diminish 'visual-line-mode)))
+(use-package lsp-ui :ensure t)
+(use-package flycheck :ensure t)
 (use-package lsp-mode :ensure t
   :hook ((c-mode . lsp)
          (c++-mode . lsp))
@@ -229,7 +231,7 @@
     (insert (format "%S" value))))
 
 (global-set-key (kbd "C-c C-e") 'rc/eval-and-replace)
-
+(global-set-key (kbd "C-c z") 'zap-up-to-char)
 (global-set-key (kbd "C-z") 'repeat)
 
 ;; calendar

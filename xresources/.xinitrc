@@ -24,10 +24,8 @@ transmission-daemon &
 telegram-desktop &
 picom --xrender-sync-fence &
 
-# export DESKTOP_SESSION=plasma
-# startplasma-x11
 
- dwmblocks &
+dwmblocks &
 
 while true; do
     dwm
