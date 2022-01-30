@@ -1,8 +1,14 @@
 (setq tls-checktrust t)
 (setq gnutls-verify-error t)
 (setq make-backup-files t)
+(setq version-control t
+      kept-new-versions 16
+      kept-old-version 2
+      delete-old-versions nil
+      backup-by-copying-when-linked t)
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (setq org-clock-sound "~/Downloads/bell.wav")
+(setq default-todos "~/Documents/")
 ;;(setq show-paren-style 'expression)
 (setq ring-bell-function 'ignore)
 (global-visual-line-mode 1)
@@ -15,8 +21,8 @@
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
 ;;(load-theme 'kaolin-valley-dark t)
-(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-22"))
-(set-frame-font "Iosevka-20")
+(add-to-list 'default-frame-alist '(font . "Iosevka-24"))
+(set-frame-font "Iosevka-24")
 ;(set-frame-font "Iosevka Nerd Font-22")
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -38,22 +44,31 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq display-line-numbers-type 'relative)
-;;(setq global-display-line-numbers 'relative)
 (global-display-line-numbers-mode)
 (setq x-underline-at-descent-line t)
 ;;(setq solarized-distinct-fringe-background t)
-(setq solarized-high-contrast-mode-line nil)
+(setq solarized-high-contrast-mode-line t)
 
 (add-hook 'prog-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'before-save-hook 'rc/set-up-whitespace-handling)
+
+(global-set-key (kbd "C-x C-s") 'my-save-buffer)
 
 (global-set-key (kbd "C-c c") 'comment-dwim)
 (global-set-key (kbd "C-x a r") 'align-regexp)
 
 (global-set-key (kbd "<f2>") 'recompile)
+
 (when (not (package-installed-p 'use-package))
   (package-refresh-contents)
   (package-install 'use-package))
+
+(add-hook 'emacs-startup-hook '(lambda () (find-file (concat default-todos "todo.org"))))
+
+(defun my-save-buffer ()
+  (interactive)
+  (let ((current-prefix-arg 4))
+    (call-interactively 'save-buffer)))
 
 (defun eshell-here ()
   (interactive)
@@ -75,16 +90,12 @@
 ;;          (lambda () (require 'ccls) (lsp)))
 ;;   (setq ccls-executable "/usr/local/bin/ccls")
 ;;   (setq ccls-initialization-options
-;; 	'(:index (:comments 2) :completion (:detailedLabel t)))
+;; '(:index (:comments 2) :completion (:detailedLabel t)))
 ;;   )
 
-;; (use-package ccls
-;;   :config
-;;   :hook
-;;   ((c-mode c++-mode objc-mode cuda-mode) .
-;;    (lambda () (require 'ccls) (lsp)))
-;;   (setq ccls-initialization-options
-;;         '(:index (:comments 2) :completion (:detailedLabel t))))
+(use-package avy :ensure t
+  :bind
+  ("C-c j" . avy-goto-char-2))
 (use-package diminish :ensure t
   :config
   (progn (diminish 'company-mode)
@@ -196,7 +207,8 @@
              (("M-p" . move-text-up)
               ("M-n" . move-text-down)))
 (use-package expand-region :defer t :ensure t
-             :bind ("C-=" . er/expand-region))
+             :bind ("C-=" . er/expand-region)
+             :bind ("C--" . er/contract-region))
 (use-package magit :ensure t :defer t
   :bind (("C-x g" . magit-status)))
 (use-package rainbow-delimiters :ensure t :defer t
@@ -235,17 +247,22 @@
 (global-set-key (kbd "C-z") 'repeat)
 
 ;; calendar
-;; (setq calendar-week-start-day 1)
 ;; (setq calendar-latitude 59.938)
 ;; (setq calendar-longitude 30.31)
 
+(defun insert-todays-date (arg)
+  (interactive "P")
+  (insert (if arg
+              (format-time-string "%d-%m-%Y")
+            (format-time-string "%A %H:%M %b %e"))))
+
+(setq calendar-week-start-day 1)
 (setq calendar-latitude 60.001168)
 (setq calendar-longitude 30.42313)
 
-
 (defun rc/set-up-whitespace-handling ()
   (interactive)
-;;  (whitespace-mode 1)
+  (whitespace-mode 1)
   (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
 ;; (setq auto-save-default nil)
