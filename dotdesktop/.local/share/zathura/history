@@ -1,27 +1,27 @@
 [/home/diamond/Downloads/Varg Vikernes - Sorcery and Religion in Ancient Scandinavia-Abstract Sounds Books (2011).pdf]
-page=11
+page=63
 offset=0
-zoom=1.4641000000000006
+zoom=1
 rotate=0
 pages-per-row=1
 first-page-column=1:1
 page-right-to-left=false
-position-x=0.4514285714285714
-position-y=0.18026013624807785
-time=1631929409
-jumplist=6 0.3491525423728814 0.10226684225322931 0 0.5 0.0074866706161137442 10 0.6508474576271186 0.16906566143428484 0 0.5 0.0074866706161137442 
+position-x=0.58854625550660788
+position-y=0.99340777613345888
+time=1644413702
+jumplist=6 0.3491525423728814 0.10226684225322931 0 0.5 0.0074866706161137442 10 0.6508474576271186 0.16906566143428484 0 0.5 0.0074866706161137442 23 0.41145374449339212 0.37496268690563916 63 0.5 0.99097521551724144 
 
 [kiWJhSPMGtGXrymBrWc8Y/kg0OOlxKem0LwK2d/6H6o=]
-page=11
+page=63
 offset=0
-zoom=1.4641000000000006
+zoom=1
 rotate=0
 pages-per-row=1
 first-page-column=1:1
 page-right-to-left=false
-position-x=0.4514285714285714
-position-y=0.18026013624807785
-time=1631929409
+position-x=0.58854625550660788
+position-y=0.99340777613345888
+time=1644413702
 
 [/home/diamond/Downloads/E5246_Rampage_III_Extreme_manual/e5246_Rampage III Extreme.pdf]
 page=31
@@ -1424,16 +1424,16 @@ time=1639162969
 jumplist=58 0.967644084934277 0.46791287185035202 0 0.5 0.0027121160214685393 18 0.042467138523761383 0.14358845628674755 0 0.5 0.0026602094947418688 7 0.5 0.058215765050297422 
 
 [Y5xAmCmRXC0Dqpah+jP1Ll8Xk15lzaoDRT8GLzWEoR0=]
-page=9
+page=14
 offset=0
-zoom=0.97919308135810401
+zoom=1
 rotate=0
 pages-per-row=1
 first-page-column=1:1
 page-right-to-left=false
-position-x=0.042467138523761383
-position-y=0.076744754203680418
-time=1639162969
+position-x=0.93762376237623757
+position-y=0.11257342462887208
+time=1643468799
 
 [/home/diamond/hdd/recs/TCP-IP illustrated.pdf]
 page=14
@@ -1674,29 +1674,29 @@ position-y=0.0021150606168953839
 time=1640282556
 
 [/home/diamond/hdd/Shitty Shit/coding/The_C_Programming_Language.pdf]
-page=27
+page=24
 offset=0
 zoom=1.6923113000931973
 rotate=0
 pages-per-row=1
 first-page-column=1:1
 page-right-to-left=false
-position-x=0.73753894080996885
-position-y=0.12573794997707832
-time=1640367841
-jumplist=3 1.0798175598631699 0.016801206463714781 0 0.5 0.0019046380258659135 1 0.26246105919003115 0.0061205902809715659 22 0.5 0.10268372878343554 
+position-x=0.74766355140186913
+position-y=0.11515358628776816
+time=1644943858
+jumplist=3 1.0798175598631699 0.016801206463714781 0 0.5 0.0019046380258659135 1 0.26246105919003115 0.0061205902809715659 22 0.5 0.10268372878343554 28 0.26246105919003115 0.13013048926626838 0 0.5 0.0013012403041728557 
 
 [lO1UGvUkSJGLEaxvslemWJkDq2NAxhwnE9Hht74OOmg=]
-page=27
+page=24
 offset=0
 zoom=1.6923113000931973
 rotate=0
 pages-per-row=1
 first-page-column=1:1
 page-right-to-left=false
-position-x=0.73753894080996885
-position-y=0.12573794997707832
-time=1640367841
+position-x=0.74766355140186913
+position-y=0.11515358628776816
+time=1644943858
 
 [/home/diamond/hdd/Shitty Shit/coding/Running Linux.epub]
 page=13
@@ -1722,3 +1722,116 @@ page-right-to-left=false
 position-x=1.2314694408322497
 position-y=0.0099009966799492519
 time=1640282930
+
+[/home/diamond/hdd/Shitty Shit/math/Вводный курс математической логики Успенский.pdf]
+page=14
+offset=0
+zoom=1
+rotate=0
+pages-per-row=1
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.93762376237623757
+position-y=0.11257342462887208
+time=1643468799
+jumplist=9 0.04550050556117291 0.077989703082967085 0 0.5 0.002642042210387534 4 0.04550050556117291 0.034357114910214794 0 0.5 0.002642042210387534 6 0.04550050556117291 0.050214651260128425 15 0.5 0.12168966125800659 19 0.1476147614761476 0.15627834559754752 25 0.5 0.20078163278512723 125 0.1476147614761476 0.99328580201182548 0 0.5 0.0023689343724288396 4 0.8523852385238524 0.037917077969374331 0 0.5 0.0023689343724288396 19 0.5 0.15316258516607961 
+
+[/home/diamond/Downloads/(Studia philologica. Series minor) Андрей Зализняк - Слово о полку Игореве_ Взгляд лингвиста-Языки славянской культуры.pdf]
+page=14
+offset=0
+zoom=2.458500767580821
+rotate=0
+pages-per-row=1
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.5056239957150509
+position-y=0.88188031137871103
+time=1642941344
+jumplist=
+
+[OOYmCKJASF5USLo/eJncYBdttM9ZuR3Qn2p4J919Ftw=]
+page=14
+offset=0
+zoom=2.458500767580821
+rotate=0
+pages-per-row=1
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.5056239957150509
+position-y=0.88188031137871103
+time=1642941344
+
+[/home/diamond/Downloads/Д.С. Лихачев - Избранное_ _Слово о полку Игореве_ и культура его времени. Работы последних лет..pdf]
+page=10
+offset=0
+zoom=1.4501424501424502
+rotate=0
+pages-per-row=1
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.5
+position-y=0.019482528781961148
+time=1642959114
+jumplist=
+
+[70UvXmrxSK/MSDrpMpatAG+QODs7L8gO0mFsyA8zC8E=]
+page=10
+offset=0
+zoom=1.4501424501424502
+rotate=0
+pages-per-row=1
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.5
+position-y=0.019482528781961148
+time=1642959114
+
+[/home/diamond/hdd/Shitty Shit/coding/OS_UNIX_RUS.pdf]
+page=26
+offset=0
+zoom=0.78679117104086449
+rotate=0
+pages-per-row=2
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.5
+position-y=0.052347426466697621
+time=1644884348
+jumplist=
+
+[k0E5GIYTCnKIRzwjS1mQIAYr8xxDZgvKs2OoXJaifPw=]
+page=26
+offset=0
+zoom=0.78679117104086449
+rotate=0
+pages-per-row=2
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.5
+position-y=0.052347426466697621
+time=1644884348
+
+[/home/diamond/hdd/Новая папка (2)/Algorithms I/AlgorithmsFourthEdition.pdf]
+page=38
+offset=0
+zoom=1.5058400926998841
+rotate=0
+pages-per-row=1
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.51634723788049608
+position-y=0.039220337468766707
+time=1644888318
+jumplist=
+
+[//szxGm20dCiqCL801/OulujUrdjSQZpa9HTtpMvVkw=]
+page=38
+offset=0
+zoom=1.5058400926998841
+rotate=0
+pages-per-row=1
+first-page-column=1:1
+page-right-to-left=false
+position-x=0.51634723788049608
+position-y=0.039220337468766707
+time=1644888318

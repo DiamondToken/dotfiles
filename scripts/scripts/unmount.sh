@@ -12,6 +12,6 @@ chosen=$(echo "$nunmountable" | dmenu -i -p "Unmount which drive?" | awk '{print
 
 (sudo umount $chosen && notify-send "$chosen unmounted") || notify-send "unmount failed"
 
-rm -d $chosen
+rmdir $chosen
 
 exit 1

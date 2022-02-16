@@ -3,12 +3,12 @@ autoload -U colors && colors
 export LC_CTYPE=en_US.UTF-8
 export BROWSER="firefox"
 export EDITOR="emacsclient -c"
-export QT_QPA_PLATFORMTHEME=qt5ct
+# export QT_QPA_PLATFORMTHEME=qt5ct
 
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+ 
 export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=2000
 export SAVEHIST=2000

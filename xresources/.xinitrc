@@ -18,15 +18,20 @@ fcitx5 &
 clipmenud &
 sxhkd &
 dunst &
+emacs --title=emacs-server &
+firefox &
 transmission-daemon &
 /home/diamond/.screenlayout/d.sh &
 /home/diamond/.fehbg &
 telegram-desktop &
-picom --xrender-sync-fence &
+# picom --xrender-sync-fence &
 
+# export DESKTOP_SESSION=plasma
+# exec startplasma-x11
+# xmonad
 
 dwmblocks &
 
 while true; do
-    dwm
+   dwm
 done

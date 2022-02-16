@@ -1,4 +1,5 @@
 export PATH=$HOME/scripts/:$PATH
+export PATH=$HOME/.local/bin/:$PATH
 export EDITOR="emacsclient -c"
 alias nnn="nnn -C"
 

@@ -1,11 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
-echo "enter a var's value"
-read var
+dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
 
-if [ $var -eq 7 ]
-then
-	echo "$var equal to 7"
-else
-	echo "not equal to seven"
-fi
+folder=$(echo "$dirs" | dmenu -i -p "govno")
+
+echo "'$folder'"

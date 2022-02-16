@@ -9,4 +9,4 @@ folder=$(echo "$dirs" | dmenu -i -p "Choose dir" -H "${XDG_CACHE_HOME:-$HOME/.ca
 
 # folder=$(echo "$dirs" | dmenu -i -p "Choose dir" -H "/home/diamond/.cache/dmenu_run.hist")
 
-transmission-remote --add "$@" -w $folder && notify-send "Torrent added."
+transmission-remote --add "$@" -w "$folder" && notify-send "Torrent added."
