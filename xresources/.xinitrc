@@ -18,10 +18,9 @@ fcitx5 &
 clipmenud &
 sxhkd &
 dunst &
-emacs --title=emacs-server &
-firefox &
+# firefox &
 transmission-daemon &
-/home/diamond/.screenlayout/d.sh &
+/home/diamond/.screenlayout/dh.sh &
 /home/diamond/.fehbg &
 telegram-desktop &
 # picom --xrender-sync-fence &
@@ -30,8 +29,4 @@ telegram-desktop &
 # exec startplasma-x11
 # xmonad
 
-dwmblocks &
-
-while true; do
-   dwm
-done
+startxfce4
