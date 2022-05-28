@@ -8,7 +8,7 @@ export EDITOR="emacsclient -c"
 # export GTK_IM_MODULE=ibus
 # export QT_IM_MODULE=ibus
 # export XMODIFIERS=@im=ibus
- 
+
 export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=2000
 export SAVEHIST=2000
@@ -67,6 +67,7 @@ alias mv="mv -iv"
 alias nnn='nnn -cC'
 alias pc="sudo pacman -Syu && notify-send 'pacman is done'"
 alias pacman="sudo pacman"
+alias apt="sudo apt"
 alias rm="rm -v"
 alias rsh='redshift'
 alias systemctl="sudo systemctl"
@@ -74,10 +75,10 @@ alias tsm="transmission-remote"
 #set -o vi
 #bind -P
 
-
 function pasters() {
     local file=${1:-/dev/stdin}
     curl --data-binary @${file} https://paste.rs | tr -d "\n" | xclip -selection clipboard
 }
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
