@@ -104,6 +104,13 @@
       (let ((text (buffer-substring-no-properties start end)))
         (shell-command (concat "echo " text " | clip.exe")))))
 
+(defun rc/set-up-whitespace-handling ()
+  (interactive)
+  (whitespace-mode 1)
+  (add-to-list 'write-file-functions 'delete-trailing-whitespace))
+
+;; (use-package docker-compose-mode)
+(use-package dockerfile-mode :ensure t)
 (use-package yaml-mode :ensure t)
 (use-package ess :ensure t)
 (use-package olivetti :ensure t)
@@ -146,6 +153,7 @@
            '(
              ("b" "Bookmark" entry (file+headline "~/Documents/notes.org.gpg" "Bookmarks")
               "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1))))
+(use-package org-roam :ensure t :defer t)
 (use-package org-bullets :ensure t :defer t
   :after org
   :hook
@@ -260,10 +268,6 @@
 (setq calendar-latitude 60.001168)
 (setq calendar-longitude 30.42313)
 
-(defun rc/set-up-whitespace-handling ()
-  (interactive)
-  (whitespace-mode 1)
-  (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
 ;; (setq auto-save-default nil)
 ;; (setq make-backup-files nil)
@@ -323,11 +327,12 @@
  '(custom-enabled-themes (quote (solarized-light-high-contrast)))
  '(custom-safe-themes
    (quote
-    ("00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default)))
- '(docker-command "docker.exe")
+    ("7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default)))
+ '(docker-command "docker")
+ '(dockerfile-mode-command "docker")
  '(package-selected-packages
    (quote
-    (rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode docker company-posframe avy)))
+    (dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode docker company-posframe avy)))
  '(whitespace-display-mappings
    (quote
     ((space-mark 32
