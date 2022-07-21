@@ -80,5 +80,5 @@ function pasters() {
     curl --data-binary @${file} https://paste.rs | tr -d "\n" | xclip -selection clipboard
 }
 
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
