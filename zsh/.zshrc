@@ -1,10 +1,14 @@
 autoload -U colors && colors
 
+# export DISPLAY=:0.0
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LC_CTYPE=en_US.UTF-8
 export BROWSER="firefox"
-export EDITOR="emacsclient -c"
+export EDITOR="vim"
+export VISUAL="vim"
 # export QT_QPA_PLATFORMTHEME=qt5ct
 
+export PROMPT_EOL_MARK=""
 # export GTK_IM_MODULE=ibus
 # export QT_IM_MODULE=ibus
 # export XMODIFIERS=@im=ibus
@@ -38,8 +42,10 @@ zstyle ':completion:*' verbose true
 
 # autoload -U promptinit
 # promptinit
+
 # PROMPT="%F{red}%~%F{cyan} λ%f "
 PROMPT="%F{magenta}✦ %f %F{blue}%~%F{cyan} λ%f "
+
 
 # alias ls="ls --color=always"
 # alias la="ls -lah"
