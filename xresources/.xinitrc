@@ -1,13 +1,11 @@
 #!/bin/sh
-#exec setxkbmap -model pc61 -layout us,ru -variant ,, -option grp:alt_space_toggle &
+# exec setxkbmap -model pc61 -layout us,ru -variant ,, -option grp:alt_space_toggle &
 
-#export XDG_SESSION_TYPE=x11
-#export GDK_BACKEND=x11
-#exec gnome-session
+# export XDG_SESSION_TYPE=x11
 
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
+# GTK_IM_MODULE=fcitx
+# QT_IM_MODULE=fcitx
+# XMODIFIERS=@im=fcitx
 
 GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
@@ -18,15 +16,22 @@ fcitx5 &
 clipmenud &
 sxhkd &
 dunst &
-# firefox &
-transmission-daemon &
+chromium &
+dwmblocks &
+#transmission-daemon &
 /home/diamond/.screenlayout/dh.sh &
 /home/diamond/.fehbg &
 telegram-desktop &
-# picom --xrender-sync-fence &
+picom --xrender-sync-fence &
 
+while true; do
+    # Log stderror to a file
+    dwm 2> ~/.dwm.log
+    # No error logging
+    #dwm >/dev/null 2>&1
+done
+
+dwm
 # export DESKTOP_SESSION=plasma
 # exec startplasma-x11
 # xmonad
-
-startxfce4

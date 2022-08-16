@@ -1,12 +1,14 @@
 (setq tls-checktrust t)
 (setq gnutls-verify-error t)
 (setq make-backup-files t)
+(setq whitespace-style '(face tabs spaces space-before-tab newline indentation empty space-after-tab space-mark tab-mark))
 (setq version-control t
       kept-new-versions 1000
       kept-old-version 2
       delete-old-versions nil
       backup-by-copying-when-linked t)
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+(setq auto-save-default nil)
 (setq org-agenda-files '("~/Documents/todo.org"))
 (setq dired-dwim-target t)
 (setq org-clock-sound "~/Downloads/bell.wav")
@@ -22,10 +24,12 @@
 (setq inhibit-startup-screen t)
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
-;;(load-theme 'kaolin-valley-dark t)
-(add-to-list 'default-frame-alist '(font . "monoid-18"))
-(set-frame-font "monoid-18")
-;(set-frame-font "Iosevka Nerd Font-22")
+;; (load-theme 'kaolin-valley-dark t)
+;; (add-to-list 'default-frame-alist '(font . "monoid-18"))
+(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-12"))
+;; (add-to-list 'default-frame-alist '(font . "Jetbrains Mono-12"))
+;; (set-frame-font "Jetbrains Mono-12")
+(set-frame-font "Iosevka-12")
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
@@ -54,7 +58,7 @@
 ;;(setq solarized-distinct-fringe-background t)
 (setq solarized-high-contrast-mode-line nil)
 
-(add-hook 'emacs-startup-hook '(lambda () (find-file (concat default-todos "todo.org"))))
+;; (add-hook 'emacs-startup-hook '(lambda () (find-file (concat default-todos "todo.org"))))
 (add-hook 'prog-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'before-save-hook 'rc/set-up-whitespace-handling)
 
@@ -107,9 +111,17 @@
 (defun rc/set-up-whitespace-handling ()
   (interactive)
   (whitespace-mode 1)
-  (add-to-list 'write-file-functions 'delete-trailing-whitespace))
+  ;; (add-to-list 'write-file-functions 'delete-trailing-whitespace)
+  )
 
+(add-hook 'c-mode 'lsp)
+
+;; (setq write-file-functions (whitespace-write-file-hook))
 ;; (use-package docker-compose-mode)
+(use-package lsp-mode :ensure t
+  :hook (
+         (c-mode . lsp)))
+(use-package rainbow-mode :ensure t)
 (use-package dockerfile-mode :ensure t)
 (use-package yaml-mode :ensure t)
 (use-package ess :ensure t)
@@ -200,11 +212,12 @@
   :config
   (global-company-mode)
   (setq company-backends
-        '((company-files
-           company-keywords)
-          (company-abbrev company-dabbrev)))
+        '(company-files
+          company-keywords
+          company-ctags
+          company-abbrev company-dabbrev))
   (setq company-idle-delay 0.0)
-  (setq company-ctags-extra-tags-files '("$HOME/TAGS" "/usr/include/TAGS")))
+  (setq company-ctags-extra-tags-files '("$HOME/TAGS" "/usr/include/tags" "/usr/include/TAGS")))
 (use-package company-posframe :ensure t
   :diminish company-posframe
   :after company
@@ -254,10 +267,6 @@
 (global-set-key (kbd "C-c z") 'zap-up-to-char)
 (global-set-key (kbd "C-z") 'repeat)
 
-;; calendar
-;; (setq calendar-latitude 59.938)
-;; (setq calendar-longitude 30.31)
-
 (defun insert-todays-date (arg)
   (interactive "P")
   (insert (if arg
@@ -267,10 +276,6 @@
 (setq calendar-week-start-day 1)
 (setq calendar-latitude 60.001168)
 (setq calendar-longitude 30.42313)
-
-
-;; (setq auto-save-default nil)
-;; (setq make-backup-files nil)
 
 (put 'iconify-or-deiconify-frame 'disabled t)
 (put 'suspend-emacs 'disabled t)
@@ -324,18 +329,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (solarized-light-high-contrast)))
+ '(custom-enabled-themes '(solarized-dark))
  '(custom-safe-themes
-   (quote
-    ("7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default)))
+   '("4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "f5b6be56c9de9fd8bdd42e0c05fecb002dedb8f48a5f00e769370e4517dde0e8" "efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "57a29645c35ae5ce1660d5987d3da5869b048477a7801ce7ab57bfb25ce12d3e" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "70cfdd2e7beaf492d84dfd5f1955ca358afb0a279df6bd03240c2ce74a578e9e" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
  '(docker-command "docker")
  '(dockerfile-mode-command "docker")
  '(package-selected-packages
-   (quote
-    (dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode docker company-posframe avy)))
+   '(lsp-mode cmake-mode docker zenburn-theme company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
  '(whitespace-display-mappings
-   (quote
-    ((space-mark 32
+   '((space-mark 32
                  [183]
                  [46])
      (space-mark 160
@@ -343,10 +345,10 @@
                  [95])
      (tab-mark 9
                [187 9]
-               [92 9])))))
+               [92 9]))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(whitespace-line ((t (:foreground "#e2468f")))))

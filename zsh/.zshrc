@@ -38,7 +38,8 @@ zstyle ':completion:*' verbose true
 
 # autoload -U promptinit
 # promptinit
-PROMPT="%F{red}%~%F{cyan} λ%f "
+# PROMPT="%F{red}%~%F{cyan} λ%f "
+PROMPT="%F{magenta}✦ %f %F{blue}%~%F{cyan} λ%f "
 
 # alias ls="ls --color=always"
 # alias la="ls -lah"
