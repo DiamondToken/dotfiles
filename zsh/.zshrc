@@ -1,7 +1,7 @@
 autoload -U colors && colors
 
-# export DISPLAY=:0.0
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+export DISPLAY=:0.0
+#export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LC_CTYPE=en_US.UTF-8
 export BROWSER="firefox"
 export EDITOR="vim"
@@ -45,7 +45,6 @@ zstyle ':completion:*' verbose true
 
 # PROMPT="%F{red}%~%F{cyan} λ%f "
 PROMPT="%F{magenta}✦ %f %F{blue}%~%F{cyan} λ%f "
-
 
 # alias ls="ls --color=always"
 # alias la="ls -lah"
