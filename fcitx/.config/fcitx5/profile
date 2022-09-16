@@ -24,7 +24,7 @@ Name=g
 # Layout
 Default Layout=ca
 # Default Input Method
-DefaultIM=keyboard-de
+DefaultIM=keyboard-gr-polytonic
 
 [Groups/1/Items/0]
 # Name
