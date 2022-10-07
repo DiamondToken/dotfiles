@@ -5,12 +5,13 @@ alsa-tools
 alsa-utils
 android-tools
 arandr
-aria2c
+aria2
 cabal-install
 channel
 clipmenu
 dash
 discord
+docker
 dunst
 emacs
 fcitx
@@ -33,6 +34,7 @@ noto-fonts-emoji
 noto-fonts-extra
 ntfs-3g
 pass
+pass-otp
 pavucontrol
 pcmanfm
 picom
