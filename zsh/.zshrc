@@ -9,13 +9,10 @@ export VISUAL="vim"
 # export QT_QPA_PLATFORMTHEME=qt5ct
 
 export PROMPT_EOL_MARK=""
-# export GTK_IM_MODULE=ibus
-# export QT_IM_MODULE=ibus
-# export XMODIFIERS=@im=ibus
 
 export HISTFILE="${HOME}/.zsh_history"
-export HISTSIZE=2000
-export SAVEHIST=2000
+export HISTSIZE=10000
+export SAVEHIST=10000
 # setopt appendhistory
 setopt SHARE_HISTORY
 
@@ -44,27 +41,23 @@ zstyle ':completion:*' verbose true
 # promptinit
 
 # PROMPT="%F{red}%~%F{cyan} λ%f "
-PROMPT="%F{magenta}✦ %f %F{blue}%~%F{cyan} λ%f "
+PROMPT="%F{magenta}✦ %f %F{blue}%~%F{cyan} λ%f %F{red}%(?..%?)%f "
 
-# alias ls="ls --color=always"
-# alias la="ls -lah"
 # alias rsh="redshift"
-# alias grep="grep --color=always"
-# alias ka="killall"
-# alias pc="sudo pacman -Syu"
 # alias nnn="nnn -C"
 # alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
-# alias tsm="transmission-remote"
 # # [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
 # export XDG_CACHE_HOME=$HOME/.cache/
 
 alias al='la -lah'
 alias la='ls -lah'
+alias ll='ls -lah'
 alias ls='ls --color=auto'
 alias sl="ls"
 alias cp="cp -iv"
 alias dmenu="dmenu -H "${XDG_CACHE_HOME:-$HOME/.cache/}/dmenu_run.hist" "$@""
 alias du='du -h'
+alias df='df -h'
 alias emacs="emacsclient -c"
 alias grep='grep --color=auto'
 alias ka="killall"
@@ -73,6 +66,9 @@ alias mv="mv -iv"
 alias nnn='nnn -cC'
 alias pc="sudo pacman -Syu && notify-send 'pacman is done'"
 alias pacman="sudo pacman"
+alias iptables="sudo iptables"
+alias iptables-save="sudo iptables-save"
+alias ip="ip"
 alias apt="sudo apt"
 alias rm="rm -v"
 alias rsh='redshift'
@@ -86,7 +82,14 @@ function pasters() {
     curl --data-binary @${file} https://paste.rs | tr -d "\n" | xclip -selection clipboard
 }
 
+function call {
+    echo "privet"
+}
+
+zle -N call
+bindkey '^[x' call
+
 autoload -U select-word-style
 select-word-style bash
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
- source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
