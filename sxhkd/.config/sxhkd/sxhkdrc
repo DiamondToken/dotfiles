@@ -28,6 +28,10 @@ mod1 + Print
 {XF86AudioLowerVolume, XF86AudioRaiseVolume}
     pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
 
+super + {bracketleft, bracketright}
+    pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
+
+
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+16 dwmblocks
 

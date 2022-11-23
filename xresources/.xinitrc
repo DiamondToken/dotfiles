@@ -18,6 +18,7 @@ sxhkd &
 dunst &
 chromium &
 dwmblocks &
+emacs &
 #transmission-daemon &
 /home/diamond/.screenlayout/dh.sh &
 /home/diamond/.fehbg &

@@ -116,11 +116,10 @@
   ;;(add-to-list 'write-file-functions 'delete-trailing-whitespace)
   )
 
-(add-hook 'c-mode 'lsp)
-(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 ;; (setq write-file-functions (whitespace-write-file-hook))
 ;; (use-package docker-compose-mode)
+
 (use-package lsp-mode :ensure t
   :hook (
          (c-mode . lsp)))
@@ -144,10 +143,10 @@
 ;; (use-package gruvbox-theme :ensure t :defer t
 ;;   :config
 ;;   (load-theme 'gruvbox-dark-medium t))
-(use-package solarized-theme
-  :ensure t
-  :config
-  (load-theme 'solarized-dark-high-contrast t))
+;; (use-package solarized-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'solarized-dark-high-contrast t))
 (use-package python :ensure t :defer t
   :hook
   (python-mode . (lambda () (progn (setq python-indent-offset 4)
@@ -247,9 +246,10 @@
    ("C->"         . mc/mark-next-like-this)
    ("C-<"         . mc/mark-previous-like-this)
    ("C-c C-<" . mc/mark-all-like-this)
-   ("C-:" . mc/skip-to-previous-like-this)
-   ("C-\"" . mc/skip-to-next-like-this)))
-
+   ("C-c C-<" . mc/mark-all-like-this)
+   ("C-," . mc/skip-to-previous-like-this)
+   ("C-." . mc/skip-to-next-like-this)
+   ))
 
 (defun rc/delete-file ()
   (interactive)
@@ -356,3 +356,5 @@
  ;; If there is more than one, they won't work right.
  '(whitespace-line ((t (:foreground "#e2468f"))))
  '(whitespace-space ((t nil))))
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
