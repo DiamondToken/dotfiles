@@ -12,7 +12,6 @@ QT_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
 
 fcitx5 &
-
 clipmenud &
 sxhkd &
 dunst &
@@ -24,6 +23,8 @@ emacs &
 /home/diamond/.fehbg &
 telegram-desktop &
 picom --xrender-sync-fence &
+
+xset -dpms s off &
 
 while true; do
     # Log stderror to a file

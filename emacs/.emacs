@@ -26,12 +26,13 @@
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
 ;; (load-theme 'kaolin-valley-dark t)
-;; (add-to-list 'default-frame-alist '(font . "monoid-18"))
-(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-12"))
+(add-to-list 'default-frame-alist '(font . "monoid-11"))
+;; (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-12"))
 ;; (add-to-list 'default-frame-alist '(font . "Jetbrains Mono-12"))
 ;; (set-frame-font "Jetbrains Mono-12")
 
 (set-frame-font "Iosevka Nerd Font-12")
+(set-frame-font "monoid-11")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -267,8 +268,10 @@
     (insert (format "%S" value))))
 
 (global-set-key (kbd "C-c C-e") 'rc/eval-and-replace)
-(global-set-key (kbd "C-c z") 'zap-up-to-char)
+(global-set-key (kbd "C-x z") 'zap-up-to-char)
 (global-set-key (kbd "C-z") 'repeat)
+
+(global-unset-key (kbd "C-x C-z"))
 
 (defun insert-todays-date (arg)
   (interactive "P")
@@ -280,9 +283,6 @@
 (setq calendar-latitude 60.001168)
 (setq calendar-longitude 30.42313)
 
-(put 'iconify-or-deiconify-frame 'disabled t)
-(put 'suspend-emacs 'disabled t)
-(put 'suspend-tty 'disabled t)
 
 (unless (eq system-type 'windows-nt)
   (require 'server)
@@ -334,11 +334,11 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(gruvbox-dark-soft))
  '(custom-safe-themes
-   '("5d59bd44c5a875566348fa44ee01c98c1d72369dc531c1c5458b0864841f887c" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "267cf309b02f463cd50df6a9ca67034e32698510995fefaa3c1bfee2c0d30f0e" "b4e786d88aeb48bce6c3b93a72d50e9c98966b759b2b09d837ea93e25acb8cc2" "3e374bb5eb46eb59dbd92578cae54b16de138bc2e8a31a2451bf6fdb0f3fd81b" "91964f59704afb8941929ff19894e3ae5b614c2a29ccb72c8b2bbf0502c8054d" "a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" "e8882a809fb14f2307410a659846a06bfa58a2279ffb1f5aca0c3aecbcb6aaee" "f028e1985041fd072fa9063221ee9c9368a570d26bd6660edbd00052d112e8bb" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "f5b6be56c9de9fd8bdd42e0c05fecb002dedb8f48a5f00e769370e4517dde0e8" "efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "57a29645c35ae5ce1660d5987d3da5869b048477a7801ce7ab57bfb25ce12d3e" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "70cfdd2e7beaf492d84dfd5f1955ca358afb0a279df6bd03240c2ce74a578e9e" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
+   '("2ff9ac386eac4dffd77a33e93b0c8236bb376c5a5df62e36d4bfa821d56e4e20" "7a4784fc0c0c853c578132e81a757a0f9b3e675fdd7e56303f3ee1fb8d7ae2a3" "5d59bd44c5a875566348fa44ee01c98c1d72369dc531c1c5458b0864841f887c" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "267cf309b02f463cd50df6a9ca67034e32698510995fefaa3c1bfee2c0d30f0e" "b4e786d88aeb48bce6c3b93a72d50e9c98966b759b2b09d837ea93e25acb8cc2" "3e374bb5eb46eb59dbd92578cae54b16de138bc2e8a31a2451bf6fdb0f3fd81b" "91964f59704afb8941929ff19894e3ae5b614c2a29ccb72c8b2bbf0502c8054d" "a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" "e8882a809fb14f2307410a659846a06bfa58a2279ffb1f5aca0c3aecbcb6aaee" "f028e1985041fd072fa9063221ee9c9368a570d26bd6660edbd00052d112e8bb" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "3e200d49451ec4b8baa068c989e7fba2a97646091fd555eca0ee5a1386d56077" "f5b6be56c9de9fd8bdd42e0c05fecb002dedb8f48a5f00e769370e4517dde0e8" "efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "57a29645c35ae5ce1660d5987d3da5869b048477a7801ce7ab57bfb25ce12d3e" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "70cfdd2e7beaf492d84dfd5f1955ca358afb0a279df6bd03240c2ce74a578e9e" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" default))
  '(docker-command "docker")
  '(dockerfile-mode-command "docker")
  '(package-selected-packages
-   '(naysayer-theme color-theme-sanityinc-tomorrow all-the-icons-dired all-the-icons dired-sidebar gruvbox-theme lsp-mode cmake-mode docker zenburn-theme company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
+   '(lsp-jedi counsel-tramp counsel-etags moe-theme naysayer-theme color-theme-sanityinc-tomorrow dired-sidebar gruvbox-theme cmake-mode docker zenburn-theme company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
  '(whitespace-display-mappings
    '((space-mark 32
                  [183]
@@ -358,3 +358,7 @@
  '(whitespace-space ((t nil))))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+(put 'suspend-frame 'disabled t)
+(put 'iconify-or-deiconify-frame 'disabled t)
+(put 'suspend-emacs 'disabled t)
+(put 'suspend-tty 'disabled t)
