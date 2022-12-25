@@ -1,5 +1,7 @@
 autoload -U colors && colors
 
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export DISPLAY=:0.0
 #export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LC_CTYPE=en_US.UTF-8
@@ -41,8 +43,7 @@ zstyle ':completion:*' verbose true
 # promptinit
 
 # PROMPT="%F{red}%~%F{cyan} λ%f "
-PROMPT="%F{magenta}✦ %f %F{blue}%~%F{cyan} λ%f %F{red}%(?..%?)%f "
-
+PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{cyan}λ%f "
 # alias rsh="redshift"
 # alias nnn="nnn -C"
 # alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
@@ -64,7 +65,7 @@ alias ka="killall"
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias nnn='nnn -cC'
-alias pc="sudo pacman -Syu && notify-send 'pacman is done'"
+alias pc="sudo pacman -Syu --noconfirm && notify-send 'pacman is done'"
 alias pacman="sudo pacman"
 alias iptables="sudo iptables"
 alias iptables-save="sudo iptables-save"
@@ -91,5 +92,5 @@ bindkey '^[x' call
 
 autoload -U select-word-style
 select-word-style bash
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ubuntu-style
