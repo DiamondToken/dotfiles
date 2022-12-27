@@ -26,13 +26,13 @@
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
 ;; (load-theme 'kaolin-valley-dark t)
-(add-to-list 'default-frame-alist '(font . "monoid-11"))
+(add-to-list 'default-frame-alist '(font . "TerminessTTF Nerd Font Mono-16"))
 ;; (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-12"))
 ;; (add-to-list 'default-frame-alist '(font . "Jetbrains Mono-12"))
-;; (set-frame-font "Jetbrains Mono-12")
 
-(set-frame-font "Iosevka Nerd Font-12")
-(set-frame-font "monoid-11")
+;; (set-frame-font "Iosevka Nerd Font-12")
+;; (set-frame-font "monoid-11")
+(set-frame-font "TerminessTTF Nerd Font Mono-16")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
