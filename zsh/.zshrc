@@ -2,6 +2,7 @@ autoload -U colors && colors
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export PATH="$HOME/cargo/env":$PATH
 export DISPLAY=:0.0
 #export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LC_CTYPE=en_US.UTF-8
