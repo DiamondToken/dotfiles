@@ -125,9 +125,9 @@
 ;; (setq write-file-functions (whitespace-write-file-hook))
 ;; (use-package docker-compose-mode)
 
-(use-package lsp-mode :ensure t
-  :hook (
-         (c-mode . lsp)))
+;; (use-package lsp-mode :ensure t
+;;   :hook (
+;;          (c-mode . lsp)))
 (use-package rainbow-mode :ensure t)
 (use-package dockerfile-mode :ensure t)
 (use-package yaml-mode :ensure t)
@@ -145,9 +145,9 @@
   :ensure t
   :bind ("C-c d" . docker))
 (use-package git-timemachine :ensure t :defer t)
-;; (use-package gruvbox-theme :ensure t :defer t
-;;   :config
-;;   (load-theme 'gruvbox-dark-medium t))
+(use-package gruvbox-theme :ensure t :defer t
+  :config
+  (load-theme 'gruvbox-dark-medium t))
 ;; (use-package solarized-theme
 ;;   :ensure t
 ;;   :config
@@ -443,37 +443,7 @@
  '(nrepl-message-colors
    '("#ec423a" "#db5823" "#c49619" "#687f00" "#c3d255" "#0069b0" "#3cafa5" "#e2468f" "#7a7ed2"))
  '(package-selected-packages
-   '(tramp exotica-theme afternoon-theme avk-emacs-themes borland-blue-theme moe-theme use-package naysayer-theme color-theme-sanityinc-tomorrow all-the-icons-dired all-the-icons dired-sidebar gruvbox-theme lsp-mode cmake-mode docker zenburn-theme company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
- '(pdf-view-midnight-colors '("#fdf4c1" . "#32302f"))
- '(pos-tip-background-color "#01323d")
- '(pos-tip-foreground-color "#9eacac")
- '(smartrep-mode-line-active-bg (solarized-color-blend "#93a61a" "#01323d" 0.2))
- '(term-default-bg-color "#002732")
- '(term-default-fg-color "#8d9fa1")
- '(vc-annotate-background nil)
- '(vc-annotate-background-mode nil)
- '(vc-annotate-color-map
-   '((20 . "#ec423a")
-     (40 . "#dace73be2daa")
-     (60 . "#d060861a2512")
-     (80 . "#c49619")
-     (100 . "#b55b9c82193e")
-     (120 . "#ad589f3e1963")
-     (140 . "#a513a1d61994")
-     (160 . "#9c81a44d19d1")
-     (180 . "#93a61a")
-     (200 . "#84b7a96352b1")
-     (220 . "#7a4daad96863")
-     (240 . "#6cbbac617d20")
-     (260 . "#5a04adfd9175")
-     (280 . "#3cafa5")
-     (300 . "#41c4a690bd74")
-     (320 . "#41d4a1f2c946")
-     (340 . "#40129d4ad514")
-     (360 . "#3c98e0")))
- '(vc-annotate-very-old-color nil)
- '(weechat-color-list
-   '(unspecified "#002732" "#01323d" "#ae1212" "#ec423a" "#687f00" "#93a61a" "#936d00" "#c49619" "#0069b0" "#3c98e0" "#a81761" "#e2468f" "#008981" "#3cafa5" "#8d9fa1" "#60767e"))
+   '(cmake-mode ox-hugo ox-asciidoc ada-mode counsel-tramp counsel-etags moe-theme naysayer-theme gruvbox-theme docker company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
  '(whitespace-display-mappings
    '((space-mark 32
                  [183]

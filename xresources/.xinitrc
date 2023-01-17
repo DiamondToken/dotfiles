@@ -22,7 +22,7 @@ emacs &
 /home/diamond/.screenlayout/dh.sh &
 /home/diamond/.fehbg &
 telegram-desktop &
-picom --xrender-sync-fence &
+picom &
 
 xset -dpms s off &
 
