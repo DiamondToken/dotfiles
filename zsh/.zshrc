@@ -14,8 +14,8 @@ export VISUAL="vim"
 export PROMPT_EOL_MARK=""
 
 export HISTFILE="${HOME}/.zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=100000
+export SAVEHIST=100000
 # setopt appendhistory
 setopt SHARE_HISTORY
 

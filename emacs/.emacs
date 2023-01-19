@@ -26,7 +26,7 @@
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
 ;; (load-theme 'kaolin-valley-dark t)
-(add-to-list 'default-frame-alist '(font . "TerminessTTF Nerd Font Mono-16"))
+(add-to-list 'default-frame-alist '(font . "TerminessTTF Nerd Font Mono-17"))
 ;; (add-to-list 'default-frame-alist '(font . "monoid-12"))
 ;; (add-to-list 'default-frame-alist '(font . "IBM plex Mono-12"))
 ;; (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-12"))
@@ -34,7 +34,7 @@
 
 ;; (set-frame-font "Iosevka Nerd Font-12")
 ;; (set-frame-font "monoid-11")
-(set-frame-font "TerminessTTF Nerd Font Mono-16")
+(set-frame-font "TerminessTTF Nerd Font Mono-17")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -442,6 +442,7 @@
  '(lsp-ui-doc-border "#9eacac")
  '(nrepl-message-colors
    '("#ec423a" "#db5823" "#c49619" "#687f00" "#c3d255" "#0069b0" "#3cafa5" "#e2468f" "#7a7ed2"))
+ '(org-agenda-files '("/home/diamond/Documents/org-notes/todo.org"))
  '(package-selected-packages
    '(cmake-mode ox-hugo ox-asciidoc ada-mode counsel-tramp counsel-etags moe-theme naysayer-theme gruvbox-theme docker company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
  '(whitespace-display-mappings
