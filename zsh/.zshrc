@@ -66,7 +66,7 @@ alias ka="killall"
 alias mkdir="mkdir -pv"
 alias mv="mv -iv"
 alias nnn='nnn -cC'
-alias pc="sudo pacman -Syu --noconfirm && notify-send 'pacman is done'"
+alias pc="sudo pacman -Syu && notify-send 'pacman is done'"
 alias pacman="sudo pacman"
 alias iptables="sudo iptables"
 alias iptables-save="sudo iptables-save"
@@ -83,13 +83,6 @@ function pasters() {
     local file=${1:-/dev/stdin}
     curl --data-binary @${file} https://paste.rs | tr -d "\n" | xclip -selection clipboard
 }
-
-function call {
-    echo "privet"
-}
-
-zle -N call
-bindkey '^[x' call
 
 autoload -U select-word-style
 select-word-style bash

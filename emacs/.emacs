@@ -120,7 +120,6 @@
   )
 
 (add-hook 'c-mode 'lsp)
-;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 ;; (setq write-file-functions (whitespace-write-file-hook))
 ;; (use-package docker-compose-mode)
@@ -128,6 +127,9 @@
 ;; (use-package lsp-mode :ensure t
 ;;   :hook (
 ;;          (c-mode . lsp)))
+(use-package time-rouge-theme :ensure t)
+(use-package tron-legacy :ensure t)
+(use-package circadian :ensure t)
 (use-package rainbow-mode :ensure t)
 (use-package dockerfile-mode :ensure t)
 (use-package yaml-mode :ensure t)
@@ -444,7 +446,7 @@
    '("#ec423a" "#db5823" "#c49619" "#687f00" "#c3d255" "#0069b0" "#3cafa5" "#e2468f" "#7a7ed2"))
  '(org-agenda-files '("/home/diamond/Documents/org-notes/todo.org"))
  '(package-selected-packages
-   '(cmake-mode ox-hugo ox-asciidoc ada-mode counsel-tramp counsel-etags moe-theme naysayer-theme gruvbox-theme docker company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
+   '(blamer tron-legacy-theme timu-rouge-theme circadian jsonian org-modern cmake-mode ox-hugo ox-asciidoc ada-mode counsel-tramp counsel-etags moe-theme naysayer-theme gruvbox-theme docker company-ctags helm dockerfile-mode rainbow-mode yaml-mode yasnippet-snippets wrap-region use-package solarized-theme smex rust-mode rainbow-delimiters pdf-tools paredit org-bullets olivetti multiple-cursors move-text magit ido-completing-read+ hindent haskell-mode git-timemachine flycheck expand-region ess emmet-mode company-posframe avy))
  '(whitespace-display-mappings
    '((space-mark 32
                  [183]
