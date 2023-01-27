@@ -10,10 +10,10 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (setq auto-save-default nil)
 (setq org-agenda-files '("~/Documents/org-notes/todo.org"))
+(setq default-todos "~/Documents/org-notes/")
 (add-hook 'emacs-startup-hook '(lambda () (find-file (concat default-todos "todo.org"))))
 (setq dired-dwim-target t)
 (setq org-clock-sound "~/Downloads/bell.wav")
-(setq default-todos "~/Documents/org-notes/")
 ;;(setq show-paren-style 'expression)
 (setq ring-bell-function 'ignore)
 (global-visual-line-mode 1)
@@ -127,8 +127,9 @@
 ;; (use-package lsp-mode :ensure t
 ;;   :hook (
 ;;          (c-mode . lsp)))
-(use-package time-rouge-theme :ensure t)
-(use-package tron-legacy :ensure t)
+(use-package julia-mode :ensure t)
+(use-package timu-rouge-theme :ensure t)
+(use-package tron-legacy-theme :ensure t)
 (use-package circadian :ensure t)
 (use-package rainbow-mode :ensure t)
 (use-package dockerfile-mode :ensure t)
@@ -175,10 +176,10 @@
              ("b" "Bookmark" entry (file+headline "~/Documents/notes.org.gpg" "Bookmarks")
               "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1))))
 (use-package org-roam :ensure t :defer t)
-(use-package org-bullets :ensure t :defer t
+(use-package org-modern :ensure t :defer t
   :after org
   :hook
-  (org-mode . (lambda () (org-bullets-mode 1))))
+  (org-mode . (lambda () (org-modern-mode))))
 (use-package hindent :ensure t :defer t
   :hook
   ((haskell-mode . hindent-mode)))
