@@ -19,11 +19,13 @@ super + shift + m
     /home/diamond/scripts/mount.sh
 
 Print
-    maim | tee ~/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
+    maim --window $(xdotool getactivewindow) | tee ~/Pictures/$(date +%Y-%m-%d-%T).png | xclip -selection clipboard -t image/png
+
+super + Print
+    maim | tee ~/Pictures/$(date +%Y-%m-%d-%T).png | xclip -selection clipboard -t image/png
 
 mod1 + Print
-    maim -s | tee ~/Pictures/$(date +%s).png | xclip -selection clipboard -target image/png
-
+    maim -s | tee ~/Pictures/$(date +%Y-%m-%d-%T).png | xclip -selection clipboard -target image/png
 
 {XF86AudioLowerVolume, XF86AudioRaiseVolume}
     pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
@@ -37,4 +39,3 @@ XF86AudioMute
 
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
     xbacklight {-inc, -dec} 10;
-
