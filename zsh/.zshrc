@@ -43,10 +43,12 @@ zstyle ':completion:*' verbose true
 # autoload -U promptinit
 # promptinit
 
-# PROMPT="%F{red}%~%F{cyan} λ%f "
-PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{cyan}λ%f "
-# alias rsh="redshift"
-# alias nnn="nnn -C"
+function wg_ip()
+{
+    ip -brief address | awk '{if ($1 == "wg0") print $3}'
+}
+
+PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{red}$(wg_ip)%f %F{cyan}λ%f "
 # alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
 # # [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
 # export XDG_CACHE_HOME=$HOME/.cache/
