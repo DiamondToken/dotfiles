@@ -45,7 +45,8 @@ zstyle ':completion:*' verbose true
 
 function wg_ip()
 {
-    ip -brief address | awk '{if ($1 == "wg0") print $3}'
+    ip_string="$(ip -brief address | awk '{if ($1 == "wg0") print $3}')"
+    echo "${ip_string%/*}"
 }
 
 PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{red}$(wg_ip)%f %F{cyan}λ%f "
