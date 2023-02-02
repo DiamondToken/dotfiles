@@ -1,7 +1,7 @@
 font:
   normal:
-    family: IBM plex Mono
-  size: 12
+    family: TerminessTTF Nerd Font Mono
+  size: 14
 
 colors:
   # Default colors
