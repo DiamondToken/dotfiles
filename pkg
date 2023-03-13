@@ -7,7 +7,6 @@ android-tools
 arandr
 aria2
 cabal-install
-channel
 clipmenu
 dash
 discord
@@ -40,7 +39,6 @@ pcmanfm
 picom
 pulseaudio
 pulseaudio-alsa
-realtime-privileges
 redshift
 slock
 sof-firmware
@@ -75,3 +73,6 @@ zathura-ps
 zsh
 zsh-completions
 zsh-syntax-highlighting
+libxft
+libx11
+libxinerama
