@@ -1,9 +1,0 @@
-#!/bin/sh
-
-pgrep -x transmission-da > /dev/null || exit 1
-
-torrents=$(transmission-remote -l)
-downloading=$(echo "$torrents" | grep "Downloading" | wc -l)
-pers=$(echo "$torrents" | grep "Downloading" | awk '{print " "$2" "}')
-
-echo "$pers"
