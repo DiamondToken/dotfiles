@@ -1,0 +1,62 @@
+*.foreground:   #f1ebeb
+*.background:   #161616
+*.cursorColor:  #f1ebeb
+
+! black
+*.color0:       #1b1b1b
+*.color8:       #4d4d4d
+
+! red
+*.color1:       #880027
+*.color9:       #ff0048
+
+! green
+*.color2:       #728f00
+*.color10:      #b9e800
+
+! yellow
+*.color3:       #9e8f00
+*.color11:      #ffe700
+
+! blue
+*.color4:       #005189
+*.color12:      #0096ff
+
+! magenta
+*.color5:       #7d004e
+*.color13:      #ff009e
+
+! cyan
+*.color6:       #007c72
+*.color14:      #00ffea
+
+! white
+*.color7:       #c1c1c1
+*.color15:      #ffffff
+
+! Rofi
+rofi.font: Fira Code 16
+! State:           bg      border  separator
+rofi.color-window: #222222,   #FF00D9,   #222222
+! State:           'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
+rofi.color-normal: #191919, #f1ebeb, argb:00000000, #FF00D9, #FFFFFF
+rofi.color-active: #191919, #f1ebeb, argb:00000000, #FF00D9, #FFFFFF
+rofi.color-urgent: #191919, #f1ebeb, argb:00000000, #FF00D9, #FFFFFF
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.fullscreen: false
+rofi.line-margin: 0
+rofi.eh: 1
+rofi.bw: 4
+rofi.width: 30
+rofi.location: 0
+rofi.columns: 1
+rofi.padding: 15
+rofi.lines: 10
+
+! SXIV
+Sxiv.font: Fira Code:size=13
+Sxiv.background: #030303
+Sxiv.foreground: #ffffff
+
+!xrdb -merge ~/.Xresources

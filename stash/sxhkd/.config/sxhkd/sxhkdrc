@@ -1,0 +1,41 @@
+#mod1 = alr_r
+
+super + shift + z
+    prompt.sh "Reboot?" "reboot"
+
+super + shift + x
+    prompt.sh "Poweroff?" "poweroff"
+
+super + backslash
+      {clipmenu}
+
+super + o; {b, e, E, u, m}
+    {chromium, st -e nnn -Cc, pcmanfm, zathura, /home/diamond/scripts/unmount.sh}
+
+super + z
+    slock
+
+super + shift + m
+    /home/diamond/scripts/mount.sh
+
+Print
+    maim --window $(xdotool getactivewindow) | tee ~/Pictures/$(date +%Y-%m-%d-%T).png | xclip -selection clipboard -t image/png
+
+super + Print
+    maim | tee ~/Pictures/$(date +%Y-%m-%d-%T).png | xclip -selection clipboard -t image/png
+
+mod1 + Print
+    maim -s | tee ~/Pictures/$(date +%Y-%m-%d-%T).png | xclip -selection clipboard -target image/png
+
+{XF86AudioLowerVolume, XF86AudioRaiseVolume}
+    pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
+
+super + {bracketleft, bracketright}
+    pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
+
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+16 dwmblocks
+
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+    xbacklight {-inc, -dec} 10;

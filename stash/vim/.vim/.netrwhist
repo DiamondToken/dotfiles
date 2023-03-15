@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/etc/wireguard'
+let g:netrw_dirhist_8='/home/diamond/scripts'
+let g:netrw_dirhist_7='/home/diamond/dotfiles'
+let g:netrw_dirhist_6='/etc/systemd/system'
+let g:netrw_dirhist_5='/home/diamond/Templates/bash'
+let g:netrw_dirhist_4='/home/diamond/Templates/bash/banana'
+let g:netrw_dirhist_3='/home/diamond/.config/sxhkd'
+let g:netrw_dirhist_2='/home/diamond/Templates/python'
+let g:netrw_dirhist_1='/home/diamond/.steam'
+let g:netrw_dirhist_0='/home/diamond/dotfiles/scripts/repos/dwmblocks-diamond/blocks'

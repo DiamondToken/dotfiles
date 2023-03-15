@@ -1,0 +1,14 @@
+[Default Applications]
+x-scheme-handler/magnet=torrent.desktop;
+application/x.bittorrent=torrent.desktop;
+
+ivideo/x-matroska=mpv.desktop;
+video/mp4=mpv.desktop;
+image/gif=mpvgif.desktop
+image/png=sxiv.desktop;
+image/jpeg=sxiv.desktop;
+x-scheme-handler/http=brave.desktop;
+x-scheme-handler/https=brave.desktop;
+x-scheme-handler/ftp=brave.desktop;
+application/json=editor.desktop
+application/pdf=org.pwmt.zathura.desktop;

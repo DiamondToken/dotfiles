@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "$(transmission-remote -l | grep "Downloading" | awk '{print $2}')"
