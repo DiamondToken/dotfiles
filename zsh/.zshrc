@@ -73,7 +73,7 @@ alias pc="sudo pacman -Syu && notify-send 'pacman is done'"
 alias pacman="sudo pacman"
 alias iptables="sudo iptables"
 alias iptables-save="sudo iptables-save"
-alias ip="ip"
+alias ip="ip --color=auto"
 alias apt="sudo apt"
 alias rm="rm -v"
 alias rsh='redshift'
