@@ -54,6 +54,7 @@ PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{red}$(wg_ip)%f %F{cyan}λ
 # # [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
 # export XDG_CACHE_HOME=$HOME/.cache/
 
+alias tn='telnet'
 alias al='la -lah'
 alias la='ls -lah'
 alias ll='ls -lah'
