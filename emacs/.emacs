@@ -80,6 +80,13 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(defun gen-tags ()
+  "Generate TAGS in prompted directory"
+  (interactive)
+  (let ((default-directory (read-directory-name "Choose directory name: ")))
+    (shell-command "find . -name \"*.c\" -print -or -name \"*.h\" -print | xargs etags --append")))
+
+
 (defun my-delete-whitespace-rectangle ()
   "Delete repeated whitespaces and inserts one"
   (interactive)
