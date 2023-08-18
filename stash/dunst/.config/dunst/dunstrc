@@ -14,13 +14,13 @@ padding = 4
 horizontal_padding = 13
 frame_width = 3
 frame_color = "#689d6a"
-separator_color = "#001E26"
+separator_color = "#689d6a"
 
-font = TerminessTTF Nerd Font Mono 12
+font = Iosevka Nerd Font Mono 12
 
 line_height = 0
 # markup = full
-# format = "<span size='x-large' font_desc='Inconsolata 11' weight='bold' foreground='#A57705'>%s</span>\n\n%b"
+# format = "<span size='x-large' font_desc='Iosevka Nerd Font Mono 12' weight='bold' foreground='#A57705'>%s</span>\n\n%b"
 alignment = left
 
 idle_threshold = 120
@@ -51,20 +51,20 @@ context = ctrl+shift+period
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#002731"
-    foreground = "#81908F"
+    background = "#282828"
+    foreground = "#a89984"
     timeout = 5 
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#002731"
-    foreground = "#81908F"
+    background = "#282828"
+    foreground = "#a89984"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#002731"
-    foreground = "#81908F"
+    background = "#282828"
+    foreground = "#a89984"
     timeout = 5

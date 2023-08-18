@@ -80,8 +80,14 @@ alias rm="rm -v"
 alias rsh='redshift'
 alias systemctl="sudo systemctl"
 alias tsm="transmission-remote"
+alias make="make && notify-send 'make done'"
+alias lsblk="lsblk -p"
 #set -o vi
 #bind -P
+
+function rmknh(){
+    rm -rf ~/.ssh/known_hosts
+}
 
 function pasters() {
     local file=${1:-/dev/stdin}
@@ -92,7 +98,3 @@ autoload -U select-word-style
 select-word-style bash
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ubuntu-style
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

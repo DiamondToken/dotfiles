@@ -1,4 +1,12 @@
+agda
+ngrep
+dsniff
+coq
 alacritty
+obs-studio
+inkscape
+gimp
+krita
 alsa-firmware
 alsa-oss
 alsa-tools
@@ -91,6 +99,7 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 python-pip
 qrencode
+barcode
 radare2
 read-edid
 redshift

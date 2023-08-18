@@ -1,5 +1,4 @@
-syntax enable
-set number relativenumber
+syntax enable set number relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -29,9 +28,10 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex'}
 Plug 'chrisbra/Colorizer'
 Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-colorscheme solarized
 set background=dark
+colorscheme gruvbox
 
 filetype on

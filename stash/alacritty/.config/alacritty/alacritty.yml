@@ -217,7 +217,7 @@ schemes:
       white:   '0xe6d5ae'
 
 # Apply the color scheme.
-colors: *solarized_light
+colors: *gruvbox_material_hard_dark
 
 key_bindings:
   - { key: PageUp,   mods: Alt,   action: ScrollPageUp   }

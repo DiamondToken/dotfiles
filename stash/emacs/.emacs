@@ -29,12 +29,11 @@
 ;; (add-to-list 'default-frame-alist '(font . "TerminessTTF Nerd Font Mono-15"))
 ;; (add-to-list 'default-frame-alist '(font . "monoid-12"))
 ;; (add-to-list 'default-frame-alist '(font . "IBM plex Mono-12"))
-(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-12"))
+(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font-14"))
 ;; (add-to-list 'default-frame-alist '(font . "Jetbrains Mono-12"))
 
-;; (set-frame-font "Iosevka Nerd Font-12")
+(set-frame-font "Iosevka Nerd Font-14")
 ;; (set-frame-font "monoid-11")
-;; (set-frame-font "TerminessTTF Nerd Font Mono-15")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -79,6 +78,13 @@
 (when (not (package-installed-p 'use-package))
   (package-refresh-contents)
   (package-install 'use-package))
+
+(defun gen-tags ()
+  "Generate TAGS in prompted directory"
+  (interactive)
+  (let ((default-directory (read-directory-name "Choose directory name: ")))
+    (shell-command "find . -name \"*.c\" -print -or -name \"*.h\" -print | xargs etags --append")))
+
 
 (defun my-delete-whitespace-rectangle ()
   "Delete repeated whitespaces and inserts one"
