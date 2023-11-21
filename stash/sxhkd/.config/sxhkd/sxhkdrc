@@ -31,8 +31,17 @@ mod1 + Print
     pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
 
 super + {bracketleft, bracketright}
-    pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
+    playerctl {previous, next}
+    # pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
 
+XF86AudioMicMute
+    playerctl play-pause
+
+XF86PowerOff
+    notify-send "poweroff"
+
+XF86PowerDown
+    notify-send "powerdown"
 
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+16 dwmblocks

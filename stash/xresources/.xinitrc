@@ -14,6 +14,8 @@ emacs &
 "$HOME"/.fehbg &
 telegram-desktop &
 picom &
+unclutter &
+mpris-proxy &
 
 xset -dpms s off &
 

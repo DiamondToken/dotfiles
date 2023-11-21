@@ -9,6 +9,7 @@ export LC_CTYPE=en_US.UTF-8
 export BROWSER="firefox"
 export EDITOR="vim"
 export VISUAL="vim"
+export MENUCONFIG_COLOR=blackbg
 # export QT_QPA_PLATFORMTHEME=qt5ct
 
 export PROMPT_EOL_MARK=""
@@ -74,16 +75,20 @@ alias pc="sudo pacman -Syu && notify-send 'pacman is done'"
 alias pacman="sudo pacman"
 alias iptables="sudo iptables"
 alias iptables-save="sudo iptables-save"
+alias nft="sudo nft"
 alias ip="ip --color=auto"
 alias apt="sudo apt"
 alias rm="rm -v"
 alias rsh='redshift'
 alias systemctl="sudo systemctl"
 alias tsm="transmission-remote"
-alias make="make && notify-send 'make done'"
 alias lsblk="lsblk -p"
-#set -o vi
-#bind -P
+
+make_path=$(which make)
+
+function make() {
+    $make_path $@ && notify-send "make '$@' done"
+}
 
 function rmknh(){
     rm -rf ~/.ssh/known_hosts
