@@ -11,11 +11,9 @@ atftp
 barcode
 bluez
 bluez-utils
-cabal-install
 chromium
 clipmenu
 cmake
-coq
 coq
 ctags
 dash
@@ -60,10 +58,7 @@ jshon
 julia
 krita
 libx11
-libx11
 libxft
-libxft
-libxinerama
 libxinerama
 lsof
 ltrace
@@ -86,9 +81,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 ntfs-3g
-ntfs-3g
 obs-studio
-pass
 pass
 pass-otp
 patch
@@ -105,7 +98,6 @@ pulseaudio-bluetooth
 python-pip
 qrencode
 radare2
-read-edid
 redshift
 reflector
 rsync
@@ -113,9 +105,7 @@ samba
 scapy
 screenkey
 sed
-sl
 slock
-sof-firmware
 sshfs
 stow
 strace
@@ -127,12 +117,9 @@ sxiv
 tcpdump
 telegram-desktop
 texlive-most
-texlive-most
-tldr
 tldr
 torbrowser-launcher
 traceroute
-translate-shell
 translate-shell
 transmission-cli
 ttf-bitstream-vera
@@ -143,10 +130,8 @@ ttf-hack
 ttf-ibm-plex
 ttf-iosevka
 ttf-iosevka-nerd
-ttf-iosevka-nerd
 ttf-jetbrains-mono
 ttf-joypixels
-ttf-monofur
 ttf-monofur
 ttf-monoid
 ttf-terminus-nerd
@@ -154,7 +139,6 @@ unclutter
 unrar
 unzip
 upx
-usb-utils
 valgrind
 virtualbox
 vlc

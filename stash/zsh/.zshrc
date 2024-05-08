@@ -2,7 +2,7 @@ autoload -U colors && colors
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export PATH="$HOME/cargo/env":$PATH
+export PATH="$HOME/cargo/env:$HOME/.nix-profile/bin":$PATH
 export DISPLAY=:0.0
 #export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LC_CTYPE=en_US.UTF-8
@@ -19,6 +19,8 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 # setopt appendhistory
 setopt SHARE_HISTORY
+
+export PROMPT_COMMAND="printf '\033]11;#000000\033\\'"
 
 set -o emacs
 bindkey -e
@@ -44,13 +46,13 @@ zstyle ':completion:*' verbose true
 # autoload -U promptinit
 # promptinit
 
-function wg_ip()
-{
-    ip_string="$(ip -brief address | awk '{if ($1 == "wg0") print $3}')"
-    echo "${ip_string%/*}"
-}
+#function wg_ip()
+#{
+#    ip_string="$(ip -brief address | awk '{if ($1 == "wg1") print $3}')"
+#    echo "${ip_string%/*}"
+#}
 
-PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{red}$(wg_ip)%f %F{cyan}λ%f "
+PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{red}%f %F{cyan}λ%f "
 # alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
 # # [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
 # export XDG_CACHE_HOME=$HOME/.cache/
@@ -101,5 +103,10 @@ function pasters() {
 
 autoload -U select-word-style
 select-word-style bash
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ubuntu-style
+
+
+. /etc/os-release
+[ $NAME = "Arch Linux" ] && {
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+} ||
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -9,8 +9,8 @@ super + shift + x
 super + backslash
       {clipmenu}
 
-super + o; {b, e, E, u, m}
-    {chromium, st -e nnn -Cc, pcmanfm, zathura, /home/diamond/scripts/unmount.sh}
+super + o; {b, e, E, u, m, B}
+    {chromium, st -e nnn -Cc, pcmanfm, zathura, /home/diamond/scripts/unmount.sh, dmenu_bluetooth.sh}
 
 super + z
     slock
@@ -39,9 +39,6 @@ XF86AudioMicMute
 
 XF86PowerOff
     notify-send "poweroff"
-
-XF86PowerDown
-    notify-send "powerdown"
 
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+16 dwmblocks
