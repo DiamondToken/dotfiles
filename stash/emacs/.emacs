@@ -28,7 +28,7 @@
 (setq inhibit-startup-screen t)
 (setq message-log-max t)
 (setq confirm-kill-emacs 'y-or-n-p)
-(set-frame-font "Iosevka Nerd Font Mono-15")
+(set-frame-font "Iosevka Nerd Font Mono-14")
 (add-to-list 'default-frame-alist '(font . "Iosevka-15"))
 
 (setq message-sendmail-f-is-evil 't)
@@ -65,7 +65,8 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+;; (global-display-line-numbers-mode)
 (setq x-underline-at-descent-line t)
 ;;(setq solarized-distinct-fringe-background t)
 (setq solarized-high-contrast-mode-line nil)
