@@ -1,0 +1,7 @@
+[user]
+	email = d.elizarov.00@gmail.com
+	name = Elizarov Dmitry
+[pull]
+	rebase = true
+[http]
+	version = HTTP/1.1
