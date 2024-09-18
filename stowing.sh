@@ -1,19 +1,24 @@
 #!/usr/bin/env sh
 
 
-stowing_stash() {
+stash() {
+    rm -rf .vim
+    rm -rf .viminfo
+
     cd stash
     stow -t ~ *
 }
 
-stowing_root(){
+root(){
     echo -e "\nSTOWING_ROOT...\n"
+
+    rm /etc/pacman.conf
 
     cd root
     sudo stow -t / *
 }
 
-unstowing_root(){
+unroot(){
     echo -e "\nUNSTOWING_ROOT...\n"
 
     cd root

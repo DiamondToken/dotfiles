@@ -52,7 +52,7 @@ zstyle ':completion:*' verbose true
 #    echo "${ip_string%/*}"
 #}
 # %F{magenta}✦ %f 
-PROMPT=" %F{magenta}ξ%f %F{blue}%~ %F{yellow}%m%f %F{red}%f %F{cyan}λ%f "
+PROMPT=" %F{magenta}ξ%f %F{blue}%~ %F{yellow}%m%f %F{red}%f%F{cyan}λ%f "
 # alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
 # # [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
 # export XDG_CACHE_HOME=$HOME/.cache/
