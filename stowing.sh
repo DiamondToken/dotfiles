@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+cd dirname $0
+
 
 stash() {
     rm -rf .vim
