@@ -41,15 +41,19 @@ zstyle ':completion:*' verbose true
 # zmodload zsh/complist
 
 # autoload -U promptinit
-# promptinit
-
 function wg_ip()
 {
-    ip_string="$(ip -brief address | awk '{if ($1 == "wg0") print $3}')"
+    ip_string="$(ip -brief address | awk '{if ($1 == "home") print $3}')"
     echo "${ip_string%/*}"
 }
 
-PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{red}$(wg_ip)%f %F{cyan}λ%f "
+[ -n "$SSH_TTY" -o -n "$SSH_CLIENT" ] && {
+    PROMPT="%F{magenta}ÉĈÉÀ_SSH: %f %F{blue}%~ %F"
+} || {
+    PROMPT="%F{magenta}✦%f %F{blue}%~ %F{yellow}%m%f %F{red}$(wg_ip)%f %F{cyan}λ%f "
+}
+
+# promptinit
 # alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
 # # [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"
 # export XDG_CACHE_HOME=$HOME/.cache/
@@ -63,6 +67,7 @@ alias cp="cp -iv"
 alias dmenu="dmenu -H "${XDG_CACHE_HOME:-$HOME/.cache/}/dmenu_run.hist" "$@""
 alias du='du -h'
 alias df='df -h'
+alias dnf="sudo dnf"
 alias emacs="emacsclient -c"
 alias grep='grep --color=auto'
 alias ka="killall"

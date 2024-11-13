@@ -11,5 +11,10 @@ GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
 
+
+[ -n "$SSH_TTY" -o -n "$SSH_CLIENT" ] && {
+    return
+}
+
 startx
 xset m 0 0
