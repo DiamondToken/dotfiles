@@ -30,6 +30,9 @@ mod1 + Print
 {XF86AudioLowerVolume, XF86AudioRaiseVolume}
     pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
 
+{XF86AudioPrev, XF86AudioNext}
+    playerctl {previous, next}
+
 super + {bracketleft, bracketright}
     playerctl {previous, next}
     # pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%} && pkill -RTMIN+16 dwmblocks
