@@ -1,5 +1,9 @@
 #!/bin/sh
 
+[ -n "$SSH_TTY" -o -n "$SSH_CLIENT" ] && {
+       exit 0
+}    
+
 #setxkbmap -model pc61 -layout us,ru -variant ,, -option grp:alt_space_toggle &
 
 fcitx5 &
