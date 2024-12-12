@@ -80,6 +80,9 @@
 (global-set-key (kbd "C-x a r") 'align-regexp)
 (global-set-key (kbd "<f2>") 'recompile)
 
+(add-to-list 'auto-mode-alist '("\\.uc\\'" . js-mode))
+
+
 (when (not (package-installed-p 'use-package))
   (package-refresh-contents)
   (package-install 'use-package))
