@@ -55,7 +55,7 @@ zstyle ':completion:*' verbose true
 [ -n "$SSH_TTY" -o -n "$SSH_CLIENT" ] && {
     PROMPT="%F{magenta}ÉĈÉÀ_SSH: %f %F{blue}%~ %F"
 } || {
-    PROMPT="%F{magenta}✦%f %F{blue}%~ %F{yellow}%m%f %F{red}%f %F{cyan}λ%f "
+    PROMPT="%F{magenta}✦ %f %F{blue}%~ %F{yellow}%m%f %F{red}%f %F{cyan}λ%f "
 }
 
 # alias dmenu="dmenu -H ${XDG_CACHE_HOME}/dmenu_run.hist"
@@ -90,6 +90,9 @@ alias rsh='redshift'
 alias systemctl="sudo systemctl"
 alias tsm="transmission-remote"
 alias lsblk="lsblk -p"
+
+# stty stop undef
+stty -ixon
 
 make_path=$(which make)
 
