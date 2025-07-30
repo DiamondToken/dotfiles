@@ -17,7 +17,7 @@ set ignorecase
 
 set is
 set t_Co=256
-
+let g:solarized_termcolors=256
 
 let python_highlight_all = 1
 let g:livepreview_previewer = 'zathura'
@@ -31,7 +31,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
-set background=dark
-colorscheme gruvbox
+syntax enable
+set background=light
+colorscheme solarized
 
 filetype on
